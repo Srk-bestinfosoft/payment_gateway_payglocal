@@ -1,4 +1,5 @@
 <?php
+require_once "config.php";
 $params = $_POST; // payment gateway will post response after transaction done.
 $ok = $params['x-gl-token'];
 //echo $ok;
@@ -35,6 +36,8 @@ if (count($parts) === 3) {
         echo "<tr><td>Merchant TXN ID</td><td>" . htmlspecialchars($merchantTxnId) . "</td></tr>";
         echo "<tr><td>Payment Method</td><td>" . htmlspecialchars($paymentMethod) . "</td></tr>";
         echo "<tr><td>Status</td><td>" . htmlspecialchars($status) . "</td></tr>";
+        echo "<tr><td>Status url </td><td><a href='http://".$_SERVER['HTTP_HOST']."/payment_gateway/status.php?gid=".htmlspecialchars($gid)."'>http://".$_SERVER['HTTP_HOST']."/payment_gateway/status.php?gid=".htmlspecialchars($gid)."</a></td></tr>";
+       
         echo "</tbody>";
         echo "</table></center>";
     } else {
