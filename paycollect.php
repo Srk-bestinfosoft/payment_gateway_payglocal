@@ -54,6 +54,8 @@ $data = json_decode($response, true);
 if (isset($data['data']['redirectUrl'])) {
     // Output the redirectUrl
     echo $data['data']['redirectUrl'];
+header('Location: '.$data['data']['redirectUrl']);
+  
 } else {
     echo "redirectUrl not found.";
 }
