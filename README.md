@@ -61,7 +61,7 @@ This file handles payment initiation:
     }
   },
   "merchantCallbackURL": "https://yourdomain.com/callback"
-}
+}```
 ---
 
 ### 3. **callback.php**
