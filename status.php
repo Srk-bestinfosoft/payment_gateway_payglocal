@@ -1,9 +1,9 @@
 <?php
-$gid = $_GET['gid'];
+$gid = $_GET['gid']; // payment gateway transaction id 
 $curl = curl_init();
-$api ="repace_with_your_api";
+
 curl_setopt_array($curl, array(
-  CURLOPT_URL => 'https://api.uat.payglocal.in/gl/v1/payments/'.$gid.'/status',
+  CURLOPT_URL => $api_url.'/gl/v1/payments/'.$gid.'/status',
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => '',
   CURLOPT_MAXREDIRS => 10,
@@ -13,12 +13,12 @@ curl_setopt_array($curl, array(
   CURLOPT_CUSTOMREQUEST => 'GET',
   CURLOPT_POSTFIELDS =>'GET /gl/v1/payments/'.$gid.'/status HTTP/1.1
 Accept: application/json
-X-Gl-Auth: '.$api.'
-Host: api.uat.payglocal.in
+X-Gl-Auth: '.$api_key.'
+Host: '.$api_url.'
 
 ',
   CURLOPT_HTTPHEADER => array(
-    'x-gl-auth: '.$api.'',
+    'x-gl-auth: '.$api_key.'',
     'Content-Type: text/plain',
    
   ),
