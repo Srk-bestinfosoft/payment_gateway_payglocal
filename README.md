@@ -47,7 +47,7 @@ This file handles payment initiation:
   - `phoneNumber`: Replace with the customer's phone number.
 
 #### Example Payload:
-```json
+`json
 {
   "merchantTxnId": "199652205010",
   "merchantUniqueId": "205010_21112023123045",
@@ -61,8 +61,7 @@ This file handles payment initiation:
     }
   },
   "merchantCallbackURL": "https://yourdomain.com/callback"
-}```
----
+}`
 
 ### 3. **callback.php**
 This file handles the callback response from PayGlocal after a transaction is completed:
