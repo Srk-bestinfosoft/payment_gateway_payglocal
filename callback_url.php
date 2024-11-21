@@ -1,5 +1,5 @@
 <?php
-$params = $_POST;
+$params = $_POST; // payment gateway will post response after transaction done.
 $ok = $params['x-gl-token'];
 //echo $ok;
 // Your base64-encoded JWT
